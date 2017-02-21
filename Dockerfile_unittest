@@ -11,7 +11,7 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py
 RUN /usr/bin/python3.4 get-pip.py 
 #
 RUN yum install -y nc.x86_64
-RUN yum install -y bind_utils
+RUN yum install -y bind-utils
 #
 RUN mkdir -p /usr/src/flask_test
 ADD .bashrc /root/
