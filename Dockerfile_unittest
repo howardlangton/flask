@@ -18,4 +18,4 @@ ADD test_myflask.py /usr/src/flask_test/
 ADD .bashrc /root/
 RUN nslookup flasky.app
 
-ENTRYPOINT  python test_myflask.py
+ENTRYPOINT  python /usr/src/flask_test/test_myflask.py
