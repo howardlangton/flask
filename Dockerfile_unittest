@@ -1,0 +1,19 @@
+# Version 0.1
+# 2017-02-21 Test myflask app
+#
+FROM centos:6.8
+MAINTAINER Howard Ainley "howard.ainley@gmail.com"
+WORKDIR /root
+
+RUN yum install -y epel-release
+RUN yum install -y python34
+RUN curl -O https://bootstrap.pypa.io/get-pip.py
+RUN /usr/bin/python3.4 get-pip.py 
+#
+RUN yum install -y nc.x86_64
+RUN yum install -y bind_utils
+#
+RUN mkdir -p /usr/src/flask_test
+ADD .bashrc /root/
+
+ENTRYPOINT nslookup flasky.app

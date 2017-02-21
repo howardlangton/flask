@@ -13,6 +13,8 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py
 RUN /usr/bin/python3.4 get-pip.py 
 RUN pip install Flask
 #
+RUN yum install -y nc.x86_64
+#
 RUN mkdir -p /usr/src/flask
 ADD .bashrc /root/
 ADD myapp.py /usr/src/flask/
