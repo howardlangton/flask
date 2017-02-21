@@ -14,6 +14,8 @@ RUN yum install -y nc.x86_64
 RUN yum install -y bind-utils
 #
 RUN mkdir -p /usr/src/flask_test
+ADD test_myflask.py /usr/src/flask_test/
 ADD .bashrc /root/
+RUN nslookup flasky.app
 
-ENTRYPOINT nslookup flasky.app
+ENTRYPOINT  python test_myflask.py
